@@ -10,7 +10,7 @@
     "hawkinit": "./index.js"
   },
   "keywords": [
-    "hawkular"
+    "hawkular", "docker", "docker-compose", "cli", "cassandra"
   ],
   "author": "Jiri Kremser",
   "license": "Apache-2.0",
