@@ -22,3 +22,5 @@ npm install hawkinit -g
 hawkinit
 ```
 
+link:./demo.gif
+
