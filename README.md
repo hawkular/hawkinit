@@ -22,5 +22,5 @@ npm install hawkinit -g
 hawkinit
 ```
 
-link:./demo.gif
+[[https://github.com/Jiri-Kremser/hawkinit/blob/master/demo.gif|alt=cli-demo]]
 
