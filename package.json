@@ -1,0 +1,29 @@
+{
+  "name": "hawkinit",
+  "version": "1.0.0",
+  "description": "This CLI tool sets up the Hawkular services together with couple of servers to monitor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "hawkinit": "./index.js"
+  },
+  "keywords": [
+    "hawkular"
+  ],
+  "author": "Jiri Kremser",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "0.0.1",
+    "clui": "^0.3.1",
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0",
+    "inquirer": "^1.2.3",
+    "lodash": "^4.17.2",
+    "mustache": "^2.3.0",
+    "preferences": "^0.2.1",
+    "tmp": "0.0.31"
+  }
+}
