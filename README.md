@@ -13,13 +13,13 @@ todo:
 ## How to install
 
 ```bash
-npm install hawkinit -g
+$ npm install hawkinit -g
 ```
 
 ## Usage
 
 ```bash
-hawkinit
+$ hawkinit
 ```
 
 ![cli demo](https://github.com/Jiri-Kremser/hawkinit/blob/master/demo.gif)

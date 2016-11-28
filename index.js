@@ -12,6 +12,8 @@ var _             = require('lodash');
 var fs            = require('fs');
 var utils         = require('./lib/utils');
 var dc            = require('./lib/dockerCompose');
+var checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInstalled;
+var exec          = require('child_process').exec;
 
 
 // clear();
@@ -19,13 +21,11 @@ console.log('\x1B[2J');
 console.log(
   chalk.blue(
     figlet.textSync('Hawkinit', {
-       horizontalLayout: 'fitted'
-     })
+      horizontalLayout: 'fitted'
+    })
   )
 );
 
-utils.showList();
-
-// var ui = new inquirer.ui.BottomBar();
-// ui.log.write('something just happened.');
-// ui.log.write('Almost over, standby!');
+checkDockerIsInstalled(function(){
+  utils.showList();
+});
