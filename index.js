@@ -10,7 +10,7 @@ var Preferences   = require('preferences');
 var Spinner       = CLI.Spinner;
 var _             = require('lodash');
 var fs            = require('fs');
-var utils         = require('./lib/utils');
+var wizzard       = require('./lib/wizzard');
 var dc            = require('./lib/dockerCompose');
 var checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInstalled;
 var exec          = require('child_process').exec;
@@ -27,5 +27,5 @@ console.log(
 );
 
 checkDockerIsInstalled(function(){
-  utils.showList();
+  wizzard.show();
 });

@@ -1,0 +1,30 @@
+version: '2'
+services:
+
+  # The wildfly running in the domain mode container
+  hawkfly-domain-mixed:
+    image: "jkremser/hawkfly-domain-mixed:{{wfDomainVersion}}"
+    ports:
+      - "8081:8080"
+      - "9991:9990"
+    links:
+      - hawkular
+
+  # The hawkular-services container
+  hawkular:
+    image: "pilhuhn/hawkular-services:{{hawkVersion}}"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9990:9990"
+    links:
+      - cassandra
+    environment:
+      - HAWKULAR_BACKEND=remote
+      - CASSANDRA_NODES=cassandra
+
+  # The Cassandra container
+  cassandra:
+    image: cassandra:{{cassandraVersion}}
+    environment:
+      - CASSANDRA_START_RPC=true

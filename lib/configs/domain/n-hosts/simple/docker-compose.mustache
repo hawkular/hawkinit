@@ -1,0 +1,40 @@
+version: '2'
+services:
+
+  # The wildfly running in the domain mode container (master)
+  hawkfly-domain-small-master:
+    image: "jkremser/hawkfly-domain-small:{{wfDomainVersion}}"
+    ports:
+      - "8081:8080"
+      - "9991:9990"
+    links:
+      - hawkular
+
+  # The wildfly running in the domain mode container (slave)
+  hawkfly-domain-small-slave:
+    image: "jkremser/hawkfly-domain-slave-base:{{wfDomainVersion}}"
+    links:
+      - hawkfly-domain-small-master
+    environment:
+      - DOMAIN_CONTROLLER_HOST=hawkfly-domain-small-master
+      - DOMAIN_CONTROLLER_PORT=9990
+      - SERVERS=my-group=2
+
+  # The hawkular-services container
+  hawkular:
+    image: "pilhuhn/hawkular-services:{{hawkVersion}}"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9990:9990"
+    links:
+      - cassandra
+    environment:
+      - HAWKULAR_BACKEND=remote
+      - CASSANDRA_NODES=cassandra
+
+  # The Cassandra container
+  cassandra:
+    image: cassandra:{{cassandraVersion}}
+    environment:
+      - CASSANDRA_START_RPC=true
