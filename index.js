@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 'use strict';
 
-var chalk         = require('chalk');
-var clear         = require('clear');
-var CLI           = require('clui');
-var figlet        = require('figlet');
-var inquirer      = require('inquirer');
-var Preferences   = require('preferences');
-var Spinner       = CLI.Spinner;
-var _             = require('lodash');
-var fs            = require('fs');
-var wizzard       = require('./lib/wizzard');
-var dc            = require('./lib/dockerCompose');
-var checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInstalled;
-var exec          = require('child_process').exec;
+const chalk         = require('chalk');
+const clear         = require('clear');
+const CLI           = require('clui');
+const figlet        = require('figlet');
+const inquirer      = require('inquirer');
+const Preferences   = require('preferences');
+const Spinner       = CLI.Spinner;
+const _             = require('lodash');
+const fs            = require('fs');
+const wizzard       = require('./lib/wizzard');
+const dc            = require('./lib/dockerCompose');
+const checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInstalled;
+const exec          = require('child_process').exec;
 
 
 // clear();
@@ -26,6 +26,4 @@ console.log(
   )
 );
 
-checkDockerIsInstalled(function(){
-  wizzard.show();
-});
+checkDockerIsInstalled(() => wizzard.show());

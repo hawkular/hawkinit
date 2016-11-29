@@ -4,7 +4,8 @@
   "description": "This CLI tool sets up the Hawkular services together with couple of servers to monitor.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0"
+    "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
+    "start": "node ./index.js"
   },
   "bin": {
     "hawkinit": "./index.js"
@@ -16,6 +17,10 @@
     "cli",
     "cassandra"
   ],
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 4.3.2"
+  },
   "author": "Jiri Kremser",
   "license": "Apache-2.0",
   "dependencies": {
