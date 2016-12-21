@@ -39,7 +39,7 @@ sudo systemctl enable docker --now
 ```
 
 ### Fedora
-On Fedora the Docker that is in the default yum repo is obsolete, so remove it and install the docker-engine package from the yum.dockerproject.org repo.
+On Fedora 24 the Docker that is in the default yum repo is obsolete, so remove it and install the docker-engine package from the yum.dockerproject.org repo.
 
 `sudo dnf remove docker` and follow these instructions https://docs.docker.com/engine/installation/linux/fedora/
 
