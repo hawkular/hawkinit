@@ -3,6 +3,10 @@
   "version": "1.1.0",
   "description": "This CLI tool sets up the Hawkular services together with couple of servers to monitor.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jiri-Kremser/hawkinit"
+  },
   "scripts": {
     "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
     "start": "node ./index.js"
