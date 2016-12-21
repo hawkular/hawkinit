@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "lint": "./node_modules/.bin/eslint **.js"
   },
   "bin": {
     "hawkinit": "./index.js"
@@ -39,5 +40,10 @@
     "mustache": "^2.3.0",
     "preferences": "^0.2.1",
     "tmp": "0.0.31"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
