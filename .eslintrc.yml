@@ -1,3 +1,15 @@
 extends: airbnb-base
 plugins:
   - import
+rules:
+  comma-dangle:
+  - error
+  - never
+  no-console:
+  - off
+  max-len: 
+  - error
+  - 120
+  no-unused-expressions:
+  - error
+  - allowShortCircuit: true
