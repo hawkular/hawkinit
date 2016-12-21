@@ -8,7 +8,7 @@ Simple CLI tool that spawns linked docker containers with [Hawkular](http://hawk
 
 ## About
 
-This simple CLI tool helps you with starting the hawkular-services together with some monitored WildFly servers.
+This simple CLI tool helps you with starting the hawkular-services together with some monitored WildFly servers. Internally, it uses the docker-compose tool and exposes the service on `localhost:8080`.
 
 ## How to install
 
