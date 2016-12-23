@@ -1,7 +1,7 @@
 {
   "name": "hawkinit",
   "version": "1.1.2",
-  "description": "This CLI tool sets up the Hawkular services together with couple of servers to monitor.",
+  "description": "This CLI tool sets up the Hawkular Services together with couple of servers to monitor.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -44,6 +44,8 @@
     "tmp": "0.0.31"
   },
   "devDependencies": {
+    "command-line-args": "^3.0.4",
+    "command-line-usage": "^3.0.8",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0"
