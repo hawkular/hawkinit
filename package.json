@@ -1,6 +1,6 @@
 {
   "name": "hawkinit",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "This CLI tool sets up the Hawkular Services together with couple of servers to monitor.",
   "main": "index.js",
   "repository": {
