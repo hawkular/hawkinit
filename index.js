@@ -10,7 +10,6 @@ const usage = require('./lib/usage');
 const optionDefinitions = require('./lib/options');
 const _ = require('lodash');
 
-
 const hawkinitWizzard = (save, timeout) => {
   console.log('\x1B[2J');
   process.stdout.write(
