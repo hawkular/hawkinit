@@ -11,7 +11,6 @@ const usage = require('./lib/usage');
 const version = require('./package.json').version;
 const wizzard = require('./lib/wizzard');
 
-
 const hawkinitWizzard = (save, timeout) => {
   console.log('\x1B[2J');
   process.stdout.write(
