@@ -31,6 +31,11 @@ The `hawkinit` assumes the `docker` and `docker-compose` to be installed, Docker
 sudo usermod -a -G docker `whoami`
 ```
 
+Add yourself to that group for current session (or logout and log in).
+```bash
+newgrp docker
+```
+
 Make sure the docker deamon is up and running.
 
 ```bash
