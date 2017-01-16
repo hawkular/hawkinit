@@ -1,6 +1,6 @@
 {
   "name": "hawkinit",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "This CLI tool sets up the Hawkular Services together with couple of servers to monitor.",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
     "start": "node ./index.js",
-    "lint": "semistandard && ./node_modules/.bin/eslint index.js lib/**.js",
+    "lint": "semistandard && [ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js",
     "prepublish": "npm run test",
     "pretest": "npm run lint"
   },
