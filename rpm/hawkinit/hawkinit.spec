@@ -1,13 +1,18 @@
+%define _version 1.3.2
+%define _release 1
+
+
 Name:    hawkinit
-Version: 1.3.2
-Release: 1%{?dist}
+Version: %{_version}
+Release: %{_release}%{?dist}
 Summary: Hawkinit CLI Tool
+Group: Development/Tools
 URL: https://github.com/Jiri-Kremser/hawkinit
 License: ASL 2.0
-#Source0: https://github.com/Jiri-Kremser/hawkinit/archive/%{version}.tar.gz
 Source0: hawkinit-1.3.2.tar.gz
-#BuildRequires: nodejs-packaging
-BuildRequires: nodejs-packaging
+Packager: Jiri Kremser <jkremser(at)redhat.com>
+Requires: docker >= 1.10.3, docker-compose, nodejs >= 4.3.2
+Conflicts: hawkinit-engine, docker-engine
 BuildArch: noarch
 AutoReq: no
 AutoProv: no
