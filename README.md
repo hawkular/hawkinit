@@ -22,7 +22,7 @@ $ hawkinit
 ```
 Choose the versions of `hawkular-services`, Cassandra and instrumented WildFly server you want to start, number of containers or if you want to run WF in standalone mode or in a managed domain. For the domain mode couple of [scenarios](https://github.com/Jiri-Kremser/hawkfly-domain-dockerfiles#scenarios) are prepared. Once every question is answered, you should start seeing the logs from particular containers. Congrats, your hawkular-service is up and running on `http://localhost:8080`.
 
-![cli demo](https://github.com/Jiri-Kremser/hawkinit/blob/master/demo.gif)
+![cli demo](https://github.com/Jiri-Kremser/hawkinit/raw/gif/demo.gif)
 
 ## Requirements
 The `hawkinit` assumes the `docker` and `docker-compose` to be installed, Docker version should be higher than `1.12.0` and also the user that runs the command should be in the `docker` group.
