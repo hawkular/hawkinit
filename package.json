@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jiri-Kremser/hawkinit"
+    "url": "https://github.com/hawkular/hawkinit"
   },
   "scripts": {
     "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
