@@ -22,6 +22,12 @@ $ hawkinit
 ```
 Choose the versions of `hawkular-services`, Cassandra and instrumented WildFly server you want to start, number of containers or if you want to run WF in standalone mode or in a managed domain. For the domain mode couple of [scenarios](https://github.com/Jiri-Kremser/hawkfly-domain-dockerfiles#scenarios) are prepared. Once every question is answered, you should start seeing the logs from particular containers. Congrats, your hawkular-service is up and running on `http://localhost:8080`.
 
+For more help:
+
+```bash
+$ hawkinit -h
+```
+
 ![cli demo](https://github.com/hawkular/hawkinit/raw/gif/demo.gif)
 
 ## Requirements
@@ -42,6 +48,13 @@ Make sure the docker deamon is up and running.
 sudo systemctl enable docker --now
 ```
 
+Make sure the `/tmp/opt/data` is created and owned by user with `UID = 1000`.
+Running following command as non-root (as user with `UID=1000`) should work.
+
+```bash
+mkdir -p /tmp/opt/data/
+```
+
 ### Fedora
 On Fedora 24 the Docker that is in the default yum repo is obsolete, so remove it and install the docker-engine package from the yum.dockerproject.org repo.
 
@@ -50,5 +63,20 @@ On Fedora 24 the Docker that is in the default yum repo is obsolete, so remove i
 ### Debian
 `sudo apt-get install docker.io docker-compose`
 
+## Updating
+Hawkinit is a regular npm package so all is needed is
 
+```bash
+sudo npm update hawkinit -g
+```
+
+## Troubleshooting
+If you run the hawkinit, it says something like:
+
+```bash
+Later, you can find your hawkular-services listening on http://localhost:8080
+Running 'docker-compose up --force-recreate' in directory: /tmp/tmp-11573k3ujXFLACh9z
+```
+
+If you navigate to `/tmp/tmp-11573k3ujXFLACh9z`, you can run `docker-dompose up` to start it again. This is not a standard use-case, though. Any other `docker-compose` command works just fine. So for instance you may want to see only the Cassandra logs by `docker-compose logs -f myCassandra` or inspecting the Hawkular Services container by `docker-compose exec hawkular /bin/bash`, etc. Also, nothing protects you from editing the `docker-compose.yaml` file that was created in that tmp directory.
 
