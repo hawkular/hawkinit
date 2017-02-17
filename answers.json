@@ -1,0 +1,8 @@
+{
+  "hawkVersion": "latest",
+  "cassandraVersion": "3.0.9",
+  "cassandraCount": 1,
+  "wfType": "Standalone",
+  "wfStandaloneVersion": "latest",
+  "wfStandaloneCount": 1
+}
