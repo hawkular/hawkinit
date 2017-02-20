@@ -5,6 +5,7 @@ const figlet = require('figlet');
 const chalk = require('chalk');
 const checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInstalled;
 const commandLineArgs = require('command-line-args');
+const engine = require('./lib/engine');
 const fs = require('fs');
 const optionDefinitions = require('./lib/options');
 const usage = require('./lib/usage');
@@ -26,7 +27,7 @@ const hawkinitWizzard = (save, timeout) => {
 };
 
 const hawkinitRun = (answers, timeout) => {
-  checkDockerIsInstalled(() => wizzard.runIt(answers, timeout));
+  checkDockerIsInstalled(() => engine.run(answers, timeout));
 };
 
 const printVersion = () => console.log(version);
