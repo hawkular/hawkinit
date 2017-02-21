@@ -52,7 +52,7 @@ Make sure the `/tmp/opt/data` is created and owned by user with `UID = 1000`.
 Running following command as non-root (as user with `UID=1000`) should work.
 
 ```bash
-mkdir -p /tmp/opt/data/
+mkdir -p /tmp/opt/data/ && sudo chown -R $UID:$UID /tmp/opt/data/
 ```
 
 ### Fedora
