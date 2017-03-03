@@ -7,13 +7,11 @@ hawkfly:
     - hawkular
 # The hawkular-server
 hawkular:
-  image: "hawkular/hawkular-services:{{hawkVersion}}"
+  image: "jkremser/hawkular-services:0.33.0.Final-fix"
   ports:
     - "8080:8080"
     - "8443:8443"
     - "9990:9990"
-  volumes:
-    - /tmp/opt/data:/opt/data
   links:
     - myCassandra
   environment:
@@ -24,5 +22,3 @@ myCassandra:
   image: cassandra:{{cassandraVersion}}
   environment:
     - CASSANDRA_START_RPC=true
-  volumes:
-    - /tmp/opt/data:/opt/data
