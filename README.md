@@ -12,7 +12,7 @@ This simple CLI tool helps you with starting the hawkular-services together with
 ## How to install
 
 ```bash
-$ npm install hawkinit -g
+$ sudo npm install hawkinit -g
 ```
 
 ## Usage
