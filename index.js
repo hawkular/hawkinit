@@ -7,13 +7,21 @@ const checkDockerIsInstalled = require('./lib/checkCommands').checkDockerIsInsta
 const commandLineArgs = require('command-line-args');
 const engine = require('./lib/engine');
 const fs = require('fs');
+const path = require('path');
 const optionDefinitions = require('./lib/options');
 const usage = require('./lib/usage');
 const version = require('./package.json').version;
 const wizzard = require('./lib/wizzard');
 
 const hawkinitWizzard = (save, timeout) => {
+  // clear the screen
   console.log('\x1B[2J');
+
+  // show the ascii logo
+  const logo = fs.readFileSync(path.join(__dirname, 'logo'), 'utf8');
+  console.log(logo);
+
+  // .. and the ascii label
   process.stdout.write(
     chalk.blue(
       figlet.textSync('Hawkinit', {
