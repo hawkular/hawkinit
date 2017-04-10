@@ -13,7 +13,7 @@ const usage = require('./lib/usage');
 const version = require('./package.json').version;
 const wizzard = require('./lib/wizzard');
 
-const hawkinitWizzard = (save, timeout) => {
+const hawkinitWizzard = (save, timeout, full) => {
   // clear the screen
   console.log('\x1B[2J');
 
@@ -31,7 +31,7 @@ const hawkinitWizzard = (save, timeout) => {
   );
   console.log(chalk.grey(` (v${version})\n`));
 
-  checkDockerIsInstalled(() => wizzard.show(save, timeout));
+  checkDockerIsInstalled(() => wizzard.show(save, timeout, full));
 };
 
 const hawkinitRun = (answers, timeout) => {
@@ -51,6 +51,7 @@ const parseArgs = () => {
       usage.printUsage();
     } else {
       const save = options['save-answers'];
+      const full = options.full;
       const timeout = !isNaN(options.timeout) ? options.timeout : 0;
       const answerFile = options['answer-file'];
       if (answerFile) {
@@ -70,7 +71,7 @@ const parseArgs = () => {
           process.exit(2);
         }
       } else {
-        hawkinitWizzard(save, timeout);
+        hawkinitWizzard(save, timeout, full);
       }
     }
   } catch (err) {
