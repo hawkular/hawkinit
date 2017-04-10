@@ -15,6 +15,12 @@ This simple CLI tool helps you with starting the hawkular-services together with
 $ sudo npm install hawkinit -g
 ```
 
+## How to update
+
+```bash
+$ sudo npm update hawkinit -g
+```
+
 ## Usage
 
 ```bash
