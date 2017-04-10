@@ -1,10 +1,4 @@
-# set up the wildfly with embedded hawkular-agent
-hawkfly:
-  image: "pilhuhn/hawkfly:{{wfStandaloneVersion}}"
-  #ports:
-  #  - "8081:8080"
-  links:
-    - hawkular
+# set up the hawkular services only
 # The hawkular-server
 hawkular:
   image: "hawkular/hawkular-services:{{hawkVersion}}"
