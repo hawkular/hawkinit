@@ -31,6 +31,8 @@ services:
       - "9990:9990"
     links:
       - cassandra
+    volumes:
+      - /tmp/opt/hawkular:/opt/data
     environment:
       - HAWKULAR_BACKEND=remote
       - CASSANDRA_NODES=cassandra
