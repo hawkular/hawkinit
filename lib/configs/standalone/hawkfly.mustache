@@ -19,6 +19,7 @@ hawkular:
   environment:
     - HAWKULAR_BACKEND=remote
     - CASSANDRA_NODES=myCassandra
+    - HAWKULAR_USE_SSL={{ssl}}
 # The used Cassandra container
 myCassandra:
   image: cassandra:{{cassandraVersion}}
