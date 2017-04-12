@@ -36,6 +36,20 @@ $ hawkinit -h
 
 ![cli demo](https://github.com/hawkular/hawkinit/raw/gif/demo.gif)
 
+
+## Advanced Mode
+By default hawkinit asks only limited amount of questions and assumes some default values for some advanced settings.
+To activate the advanced mode, simply run the hawkinit with `-f` or `--full` flag.
+These are the features that are available in the advanced mode:
+* custom version of the cassandra container
+* multiple cassandra nodes
+* multiple host controllers
+* various scenarios for domain mode
+* SSL support
+* creating custom user in the hawkular-services container
+* and more will come
+
+
 ## Requirements
 The `hawkinit` assumes the `docker` and `docker-compose` to be installed, Docker version should be higher than `1.12.0` and also the user that runs the command should be in the `docker` group.
 
@@ -69,13 +83,6 @@ On Fedora 24 the Docker that is in the default yum repo is obsolete, so remove i
 ### Debian
 `sudo apt-get install docker.io docker-compose`
 
-## Updating
-Hawkinit is a regular npm package so all is needed is
-
-```bash
-sudo npm update hawkinit -g
-```
-
 ## Troubleshooting
 If you run the hawkinit, it says something like:
 
@@ -85,4 +92,3 @@ Running 'docker-compose up --force-recreate' in directory: /tmp/tmp-11573k3ujXFL
 ```
 
 If you navigate to `/tmp/tmp-11573k3ujXFLACh9z`, you can run `docker-dompose up` to start it again. This is not a standard use-case, though. Any other `docker-compose` command works just fine. So for instance you may want to see only the Cassandra logs by `docker-compose logs -f myCassandra` or inspecting the Hawkular Services container by `docker-compose exec hawkular /bin/bash`, etc. Also, nothing protects you from editing the `docker-compose.yml` file that was created in that tmp directory.
-
