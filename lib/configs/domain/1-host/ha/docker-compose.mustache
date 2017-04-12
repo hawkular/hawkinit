@@ -24,6 +24,9 @@ services:
     environment:
       - HAWKULAR_BACKEND=remote
       - CASSANDRA_NODES=cassandra
+      - HAWKULAR_USER={{hawkularUsername}}
+      - HAWKULAR_PASSWORD={{hawkularPassword}}
+      - HAWKULAR_USE_SSL={{ssl}}
 
   # The Cassandra container
   cassandra:

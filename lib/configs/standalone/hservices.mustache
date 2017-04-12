@@ -13,6 +13,8 @@ hawkular:
   environment:
     - HAWKULAR_BACKEND=remote
     - CASSANDRA_NODES=myCassandra
+    - HAWKULAR_USER={{hawkularUsername}}
+    - HAWKULAR_PASSWORD={{hawkularPassword}}
     - HAWKULAR_USE_SSL={{ssl}}
 # The used Cassandra container
 myCassandra:

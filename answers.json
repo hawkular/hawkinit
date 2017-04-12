@@ -1,7 +1,0 @@
-{
-  "orchestrationFramework": "docker-compose",
-  "hawkVersion": "latest",
-  "wfType": "Domain",
-  "wfDomainVersion": "latest",
-  "hawkinitVersion": "1.6.0"
-}
