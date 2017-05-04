@@ -39,8 +39,11 @@
     "command-line-usage": "^3.0.8",
     "figlet": "^1.2.0",
     "inquirer": "^1.2.3",
+    "js-yaml": "^3.8.3",
     "lodash": "^4.17.2",
     "mustache": "^2.3.0",
+    "object-path": "^0.11.4",
+    "parse-key-value": "^1.0.0",
     "tmp": "0.0.31"
   },
   "devDependencies": {
