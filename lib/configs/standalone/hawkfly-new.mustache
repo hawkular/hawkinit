@@ -1,29 +1,31 @@
-# set up the wildfly with embedded hawkular-agent
-hawkfly:
-  image: "hawkular/wildfly-hawkular-javaagent:{{wfStandaloneVersion}}"
-  #ports:
-  #  - "8081:8080"
-  links:
-    - hawkular
-# The hawkular-server
-hawkular:
-  image: "hawkular/hawkular-services:{{hawkVersion}}"
-  ports:
-    - "8080:8080"
-    - "8443:8443"
-    - "9990:9990"
-  links:
-    - myCassandra
-  volumes:
-    - /tmp/opt/hawkular:/opt/data
-  environment:
-    - HAWKULAR_BACKEND=remote
-    - CASSANDRA_NODES=myCassandra
-    - HAWKULAR_USER={{hawkularUsername}}
-    - HAWKULAR_PASSWORD={{hawkularPassword}}
-    - HAWKULAR_USE_SSL={{ssl}}
-# The used Cassandra container
-myCassandra:
-  image: cassandra:{{cassandraVersion}}
-  environment:
-    - CASSANDRA_START_RPC=true
+version: '2'
+services:
+  # set up the wildfly with embedded hawkular-agent
+  hawkfly:
+    image: "hawkular/wildfly-hawkular-javaagent:{{wfStandaloneVersion}}"
+    #ports:
+    #  - "8081:8080"
+    links:
+      - hawkular
+  # The hawkular-server
+  hawkular:
+    image: "hawkular/hawkular-services:{{hawkVersion}}"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9990:9990"
+    links:
+      - myCassandra
+    volumes:
+      - /tmp/opt/hawkular:/opt/data
+    environment:
+      - HAWKULAR_BACKEND=remote
+      - CASSANDRA_NODES=myCassandra
+      - HAWKULAR_USER={{hawkularUsername}}
+      - HAWKULAR_PASSWORD={{hawkularPassword}}
+      - HAWKULAR_USE_SSL={{ssl}}
+  # The used Cassandra container
+  myCassandra:
+    image: cassandra:{{cassandraVersion}}
+    environment:
+      - CASSANDRA_START_RPC=true
