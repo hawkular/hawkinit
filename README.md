@@ -47,6 +47,7 @@ These are the features that are available in the advanced mode:
 * various scenarios for domain mode
 * SSL support
 * creating custom user in the hawkular-services container
+* overriding the immutable flag
 * and more will come
 
 
