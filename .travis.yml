@@ -1,6 +1,13 @@
-sudo: false
+sudo: required
 language: node_js
 node_js:
   - 4
   - 6
   - node
+env:
+  matrix:
+    - TEST_DOMAIN=1
+    - TEST_SSL=1
+services:
+  - docker
+script: ./travis.tests.sh
