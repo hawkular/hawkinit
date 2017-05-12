@@ -1,13 +1,20 @@
 sudo: required
-language: node_js
-node_js:
-  - 4
-  - 6
-  - node
-env:
-  matrix:
-    - TEST_DOMAIN=1
-    - TEST_SSL=1
 services:
   - docker
-script: ./travis.tests.sh
+language: node_js
+node_js:
+  - 4.3.2 # the lowest supported version
+
+env:
+  - STANDALONE=1       # standalone over http
+  - DOMAIN=1           # domain over http
+  - STANDALONE=1 SSL=1 # standalone over https
+
+matrix:
+  include:
+  - node_js: node # check the basic scenario for the latest stable node
+    env: STANDALONE=1
+    services:
+      - docker
+
+script: ./.travis.tests.sh
