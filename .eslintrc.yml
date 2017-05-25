@@ -5,6 +5,9 @@ rules:
   no-underscore-dangle:
   - error
   - allowAfterThis: true
+  space-before-function-paren:
+  - error
+  - named: always
   comma-dangle:
   - error
   - never
