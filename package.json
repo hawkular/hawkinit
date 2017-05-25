@@ -38,6 +38,7 @@
     "command-line-args": "^3.0.4",
     "command-line-usage": "^3.0.8",
     "figlet": "^1.2.0",
+    "inflected": "^2.0.1",
     "inquirer": "^1.2.3",
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.2",
