@@ -10,7 +10,7 @@
   "scripts": {
     "test": "mocha test/*",
     "start": "node ./index.js",
-    "lint": "semistandard && [ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js",
+    "lint": "(semistandard --verbose | snazzy) && [ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js",
     "prepublish": "npm run test",
     "pretest": "npm run lint"
   },
@@ -54,6 +54,12 @@
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "mocha": "^3.4.2",
-    "semistandard": "^9.2.1"
+    "semistandard": "^9.2.1",
+    "snazzy": "^7.0.0"
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
   }
 }
