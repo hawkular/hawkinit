@@ -32,21 +32,20 @@ describe('DockerComposeBuilder', function () {
   });
 
   describe('Service', function () {
+    let builder = null;
+    let service = null;
+
+    beforeEach(function () {
+      builder = new DockerComposeBuilder();
+      service = builder.service('service');
+    });
+
     it('should add a service', function () {
-      const builder = new DockerComposeBuilder();
       builder.service('service');
       expect(builder.hasService('service')).to.equal(true);
     });
 
     describe('Parameters', function () {
-      let builder = null;
-      let service = null;
-
-      beforeEach(function () {
-        builder = new DockerComposeBuilder();
-        service = builder.service('service');
-      });
-
       describe('Image', function () {
         it('should set', function () {
           const imageName = 'image_name';
@@ -94,6 +93,18 @@ describe('DockerComposeBuilder', function () {
             });
           });
         });
+      });
+    });
+
+    describe('Deploy', function () {
+      it('Should be able to get one', function () {
+        expect(service.deploy).to.not.be.undefined;
+      });
+      it('Should be able to set replicas', function () {
+        const replicas = 5;
+        const deploy = service.deploy;
+        deploy.replicas = replicas;
+        expect(deploy.replicas).to.equal(replicas);
       });
     });
   });
