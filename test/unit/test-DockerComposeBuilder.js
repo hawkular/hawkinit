@@ -1,5 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
+
 const inflector = require('inflected');
 
 const DockerComposeBuilder = require('../../lib/dockerComposeBuilder.js');
@@ -29,6 +30,12 @@ describe('DockerComposeBuilder', function () {
       };
       expect(() => new DockerComposeBuilder(template)).to.throw(Error);
     });
+
+    it('should load from string template', function () {
+      const template = 'version: \'3\'\nservices:\n  hawkular: {}';
+      const builder = new DockerComposeBuilder(template);
+      expect(builder.hasService('hawkular')).to.equal(true);
+    });
   });
 
   describe('Service', function () {
@@ -43,6 +50,11 @@ describe('DockerComposeBuilder', function () {
     it('should add a service', function () {
       builder.service('service');
       expect(builder.hasService('service')).to.equal(true);
+    });
+
+    it('should delete a service', function () {
+      builder.removeService('service');
+      expect(builder.hasService('service')).to.equal(false);
     });
 
     describe('Parameters', function () {
