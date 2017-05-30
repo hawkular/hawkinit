@@ -8,7 +8,7 @@
     "url": "https://github.com/hawkular/hawkinit"
   },
   "scripts": {
-    "test": "mocha test/*",
+    "test": "mocha specs/*",
     "start": "node ./index.js",
     "lint": "(semistandard --verbose | snazzy) && [ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js",
     "prepublish": "npm run test",
