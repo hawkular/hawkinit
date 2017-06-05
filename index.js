@@ -58,7 +58,6 @@ const parseArgs = () => {
         if (!answerFile.exists) {
           console.log(chalk.red(`The specified answer file ${answerFile.filename} doesn't exist.`));
           process.exit(1);
-          return;
         }
         const answers = fs.readFileSync(answerFile.filename, 'utf8');
         console.log(chalk.green(`Running the hawkinit with answer file ${answerFile.filename}`));
