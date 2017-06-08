@@ -1,9 +1,9 @@
 'use strict';
 
 const chai = require('chai');
-const expect = chai.expect;
-
 const inflector = require('inflected');
+
+const expect = chai.expect;
 
 const DockerComposeBuilder = require('../../lib/dockerComposeBuilder.js');
 
@@ -72,7 +72,11 @@ describe('DockerComposeBuilder', function () {
         { context: 'ports', data: ['8090:8090', '8080:8080'], notFound: ['9090:9090'] },
         { context: 'links', data: ['myCassandra', 'hawkular'], notFound: ['metrics'] },
         { context: 'volumes', data: ['/tmp/opt/hawkular:/opt/data'], notFound: ['/notfound'] },
-        { context: 'environment', data: ['HAWKULAR_BACKEND=remote', 'CASSANDRA_NODES=myCassandra'], notFound: ['HAWKULAR_USE_SSL=1'] }
+        {
+          context: 'environment',
+          data: ['HAWKULAR_BACKEND=remote', 'CASSANDRA_NODES=myCassandra'],
+          notFound: ['HAWKULAR_USE_SSL=1']
+        }
       ];
       tests.forEach(function (test) {
         describe(`${inflector.capitalize(inflector.pluralize(test.context))}`, function () {
