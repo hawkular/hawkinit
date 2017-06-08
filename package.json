@@ -8,9 +8,9 @@
     "url": "https://github.com/hawkular/hawkinit"
   },
   "scripts": {
-    "test": "echo \"WARN: no test specified; todo: add some tests :]\" && exit 0",
+    "test": "mocha specs/*",
     "start": "node ./index.js",
-    "lint": "semistandard && [ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js",
+    "lint": "[ -f ./node_modules/.bin/eslint ] && ./node_modules/.bin/eslint index.js lib/**.js specs",
     "prepublish": "npm run test",
     "pretest": "npm run lint"
   },
@@ -38,6 +38,7 @@
     "command-line-args": "^3.0.4",
     "command-line-usage": "^3.0.8",
     "figlet": "^1.2.0",
+    "inflected": "^2.0.1",
     "inquirer": "^1.2.3",
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.2",
@@ -49,9 +50,15 @@
     "tmp": "0.0.31"
   },
   "devDependencies": {
+    "chai": "^4.0.0",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "semistandard": "^9.2.1"
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-chai-friendly": "^0.3.6",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.2"
   }
 }

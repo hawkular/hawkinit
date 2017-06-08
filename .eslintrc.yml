@@ -1,16 +1,24 @@
-extends: airbnb-base
+extends:
+  - standard
+  - airbnb-base
 plugins:
   - import
 rules:
+  no-underscore-dangle:
+  - error
+  - allowAfterThis: true
   comma-dangle:
   - error
   - never
   no-console:
   - off
-  max-len: 
+  max-len:
   - error
   - 120
   no-unused-expressions:
   - error
   - allowShortCircuit: true
+  semi:
+  - error
+  - always
   strict: off

@@ -2,7 +2,7 @@ version: '2'
 services:
   # set up the wildfly with embedded hawkular-agent
   hawkfly:
-    image: "hawkular/wildfly-hawkular-javaagent:{{wfStandaloneVersion}}"
+    image: "SETME"
     #ports:
     #  - "8081:8080"
     links:
@@ -15,17 +15,17 @@ services:
       - "8443:8443"
       - "9990:9990"
     links:
-      - myCassandra
+      - cassandra
     volumes:
       - /tmp/opt/hawkular:/opt/data
     environment:
       - HAWKULAR_BACKEND=remote
-      - CASSANDRA_NODES=myCassandra
+      - CASSANDRA_NODES=cassandra
       - HAWKULAR_USER={{hawkularUsername}}
       - HAWKULAR_PASSWORD={{hawkularPassword}}
       - HAWKULAR_USE_SSL={{ssl}}
   # The used Cassandra container
-  myCassandra:
+  cassandra:
     image: cassandra:{{cassandraVersion}}
     environment:
       - CASSANDRA_START_RPC=true
