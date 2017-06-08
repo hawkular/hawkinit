@@ -14,14 +14,14 @@ describe('DockerComposeBuilder', function () {
     });
     it('should work by passing a template', function () {
       const template = {
-        version: '3'
+        version: '2'
       };
       expect(() => new DockerComposeBuilder(template)).to.not.throw();
     });
 
     it('should work if version is an integer', function () {
       const template = {
-        version: 3
+        version: 2
       };
       expect(() => new DockerComposeBuilder(template)).to.not.throw();
     });
@@ -34,7 +34,7 @@ describe('DockerComposeBuilder', function () {
     });
 
     it('should load from string template', function () {
-      const template = 'version: \'3\'\nservices:\n  hawkular: {}';
+      const template = 'version: \'2\'\nservices:\n  hawkular: {}';
       const builder = new DockerComposeBuilder(template);
       expect(builder.hasService('hawkular')).to.equal(true);
     });
@@ -111,18 +111,6 @@ describe('DockerComposeBuilder', function () {
             });
           });
         });
-      });
-    });
-
-    describe('Deploy', function () {
-      it('Should be able to get one', function () {
-        expect(service.deploy).to.not.be.undefined;
-      });
-      it('Should be able to set replicas', function () {
-        const replicas = 5;
-        const deploy = service.deploy;
-        deploy.replicas = replicas;
-        expect(deploy.replicas).to.equal(replicas);
       });
     });
   });
