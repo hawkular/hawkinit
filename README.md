@@ -3,7 +3,7 @@
 Simple CLI tool that spawns linked docker containers with [Hawkular](http://hawkular.org) and some monitored stuff.
 
 [![Build Status](https://travis-ci.org/hawkular/hawkinit.svg?branch=master)](https://travis-ci.org/hawkular/hawkinit)
-[![npm version](https://badge.fury.io/js/hawkinit.svg)](https://badge.fury.io/js/hawkinit)
+[![npm version](https://badge.fury.io/js/%40hawkular%2Fhawkinit.svg)](https://badge.fury.io/js/%40hawkular%2Fhawkinit)
 
 ## About
 
@@ -12,13 +12,13 @@ This simple CLI tool helps you with starting the hawkular-services together with
 ## How to install
 
 ```bash
-$ sudo npm install hawkinit -g
+$ sudo npm install @hawkular/hawkinit -g
 ```
 
 ## How to update
 
 ```bash
-$ sudo npm update hawkinit -g
+$ sudo npm update @hawkular/hawkinit -g
 ```
 
 ## Usage
@@ -85,6 +85,8 @@ On Fedora 24 the Docker that is in the default yum repo is obsolete, so remove i
 `sudo apt-get install docker.io docker-compose`
 
 ## Troubleshooting
+Make sure you've installed the hawkinit as `@hawkular/hawkinit` because historically, there was also `hawkinit` npm package.
+
 If you run the hawkinit, it says something like:
 
 ```bash
